@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Opencart App Test Regression Suite Firefox" verbose="4" thread-count="6" parallel="tests">
+
+	<test name="Login Page Test">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.qa.opencarts.tests.LoginPageTest" />
+		</classes>
+	</test>
+	<test name="Accounts Page Test">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.qa.opencarts.tests.AccountsPageTest" />
+		</classes>
+	</test>
+
+	<test name="Search Test">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.qa.opencarts.tests.SearchTest" />
+		</classes>
+	</test>
+	
+	<test name="ProductInfo Page Test">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.qa.opencarts.tests.ProductInfoTest" />
+		</classes>
+	</test>
+
+	<test name="Register Page Test">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.qa.opencarts.tests.RegisterPageTest" />
+		</classes>
+	</test>
+
+	<test name="ShoppingCart Page Test">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.qa.opencarts.tests.ShoppingCartPageTest" />
+		</classes>
+	</test> 
+</suite>
