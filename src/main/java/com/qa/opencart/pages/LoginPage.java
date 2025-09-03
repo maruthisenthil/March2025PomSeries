@@ -18,7 +18,7 @@ public class LoginPage {
 	private WebDriver driver;
 	private ElementUtil eleUtil;
 
-	// private By locators: LoginPage page objects/Page elements
+	// private By locators: LoginPage Page elements
 	private final By emailID = By.id("input-email");
 	private final By password = By.id("input-password");
 	private final By loginBtn = By.xpath("//input[@value='Login']");
