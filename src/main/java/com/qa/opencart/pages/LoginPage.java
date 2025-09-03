@@ -14,11 +14,11 @@ import io.qameta.allure.Step;
 
 public class LoginPage {
 	
-	// every page will have private driver, element utill
+	// every page will have private driver, element util
 	private WebDriver driver;
 	private ElementUtil eleUtil;
 
-	// private By locators: page objects 
+	// private By locators: LoginPage page objects/Page elements
 	private final By emailID = By.id("input-email");
 	private final By password = By.id("input-password");
 	private final By loginBtn = By.xpath("//input[@value='Login']");
