@@ -2,12 +2,11 @@ package com.qa.opencart.pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.qa.opencart.constants.AppConstants;
-import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.utils.ElementUtil;
 
 import io.qameta.allure.Step;
@@ -25,6 +24,7 @@ public class LoginPage {
 	private final By forgotPwdLink = By.linkText("Forgotten Password");
 	private final By header = By.tagName("h2");
 	private final By registerLink = By.linkText("Register");
+	private final By loginErrorMsg = By.cssSelector("div.alert.alert-danger.alert-dismissible");
 	
 	public static final Logger log = LogManager.getLogger(LoginPage.class);
 	
@@ -73,6 +73,27 @@ public class LoginPage {
 		eleUtil.doSendKeys(password, pwd);
 		eleUtil.doClick(loginBtn);
 		return new AccountsPage(driver);
+	}
+	
+	@Step("Login with incorect username: {0} , and password : {1}")
+	public boolean doLoginWithInvalidCredentials(String invlidUserName, String inValidPwd) {
+		log.info("Invalid application Credentials : username: "+ invlidUserName +" - password: "+ inValidPwd);
+		
+		WebElement emailEle = eleUtil.waitForElementVisible(emailID, AppConstants.DEFAULT_MEDIUM_WAIT);
+		emailEle.clear();
+		eleUtil.waitForElementVisible(emailID, AppConstants.DEFAULT_MEDIUM_WAIT).sendKeys(invlidUserName);
+		eleUtil.doSendKeys(password, inValidPwd);
+		eleUtil.doClick(loginBtn);
+		String errorMsg = eleUtil.doElementGetText(loginErrorMsg);
+		
+		log.info("Invalid crednetials error message : "+errorMsg);
+		
+		if(errorMsg.contains(AppConstants.LOGIN_INVALID_CREDS_MSG)){
+			return true;
+		}else if(errorMsg.contains(AppConstants.LOGIN_BLANK_CREDS_MSG)) {
+			return true;
+		}
+		return false;
 	}
 	
 	@Step("navigating to the register page .. ")

@@ -5,7 +5,7 @@
 	thread-count="1" parallel="tests" >
 
 	<listeners>
-<!-- 		<listener class-name="com.aventstack.chaintest.plugins.ChainTestListener" /> -->
+		<listener class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
 		<listener class-name="com.qa.opencart.listeners.TestAllureListeners" />
 		<listener class-name="com.qa.opencart.listeners.AnnotationTransformer" />
 		
@@ -17,7 +17,7 @@
 		</classes>
 	</test>
 	
-<!-- 	<test name="Login Page Test_Firefox">
+ 	<test name="Login Page Test_Firefox">
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.qa.opencarts.tests.LoginPageTest" />
@@ -30,6 +30,8 @@
 			<class name="com.qa.opencarts.tests.LoginPageTest" />
 		</classes>
 	</test>
+	
+<!--
  
 	<test name="Register Page Test">
 		<parameter name="browser" value="firefox" />

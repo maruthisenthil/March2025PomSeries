@@ -51,6 +51,7 @@ public class ElementUtil {
 			throw new ElementException(
 					"====Value cannot be null: Keys to send should be a not null CharSequence =====");
 		}
+		getElement(locator).clear();
 		getElement(locator).sendKeys(value);
 	}
 
@@ -80,7 +81,7 @@ public class ElementUtil {
 
 	}
 
-	@Step("checking the element {0}")
+	@Step("checking the element {0} isdiaplayed on the page .. ")
 	public boolean isElementDisplayed(By locator) {
 		try {
 			return getElement(locator).isDisplayed();

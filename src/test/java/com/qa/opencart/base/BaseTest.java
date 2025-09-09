@@ -13,6 +13,7 @@ import org.testng.annotations.Parameters;
 import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.pages.AccountsPage;
+import com.qa.opencart.pages.CommonsPage;
 import com.qa.opencart.pages.LoginPage;
 import com.qa.opencart.pages.ProductInfoPage;
 import com.qa.opencart.pages.RegisterPage;
@@ -21,7 +22,6 @@ import com.qa.opencart.pages.ShoppingCartPage;
 
 import io.qameta.allure.Description;
 
-// @Listeners()
 //@Listeners({ChainTestListener.class, TestAllureListeners.class})
 public class BaseTest {
 	
@@ -34,6 +34,7 @@ public class BaseTest {
 	protected ProductInfoPage  productInfoPage;
 	protected ShoppingCartPage shoppingCartPage;
 	protected RegisterPage registerPage;
+	protected CommonsPage  commonsPage;
 	
 	@Description("Launch the Browser: {0} and url")
 	@Parameters({"browser"})
@@ -47,6 +48,7 @@ public class BaseTest {
 		}
 		driver = df.initDriver(prop); // this is threadlocal driver
 		loginPage = new LoginPage(driver);
+		commonsPage = new CommonsPage(driver);
 	}
 	
 	@AfterMethod // will run after each @Test method 
