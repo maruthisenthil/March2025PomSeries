@@ -24,16 +24,6 @@
 		</classes>
 	</test>
 
-	
-	 
-	<!-- <test name="Register Page Test">
-		<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="com.qa.opencarts.tests.RegisterPageTest" />
-		</classes>
-	</test>
-
-
 	<test name="Search Test">
 		<parameter name="browser" value="chrome" />
 		<classes>
@@ -47,6 +37,16 @@
 			<class name="com.qa.opencarts.tests.ProductInfoTest" />
 		</classes>
 	</test>
+	 
+	<!-- <test name="Register Page Test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.qa.opencarts.tests.RegisterPageTest" />
+		</classes>
+	</test>
+
+
+	
 
 	<test name="ShoppingCart Page Test">
 		<parameter name="browser" value="firefox" />
