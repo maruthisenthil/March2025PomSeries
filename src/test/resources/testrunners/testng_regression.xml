@@ -30,13 +30,19 @@
 			<class name="com.qa.opencarts.tests.SearchTest" />
 		</classes>
 	</test>
-
 	<test name="ProductInfo Page Test">
 		<parameter name="browser" value="edge" />
 		<classes>
 			<class name="com.qa.opencarts.tests.ProductInfoTest" />
 		</classes>
 	</test>
+	<test name="ProductInfo Page Test">
+		<parameter name="browser" value="edge" />
+		<classes>
+			<class name="com.qa.opencarts.tests.ProductInfoTest" />
+		</classes>
+	</test>
+	
 	
 	 
 	<!-- <test name="Register Page Test">
@@ -46,12 +52,8 @@
 		</classes>
 	</test>
 
-	<test name="ProductInfo Page Test">
-		<parameter name="browser" value="edge" />
-		<classes>
-			<class name="com.qa.opencarts.tests.ProductInfoTest" />
-		</classes>
-	</test>
+
+
 	
 
 	<test name="ShoppingCart Page Test">
